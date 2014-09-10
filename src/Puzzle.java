@@ -51,14 +51,8 @@ public class Puzzle
 
     public void printPuzzle()
     {
-        //for(int i = 0; i < this.MAX_SIZE; i++)
-        //{
-        //    for(int j = 0; j < this.MAX_SIZE; j++)
-        //    {
-                for(char[] row: this.wordPuzzle)
-                    printRow(row);
-        //    }
-       // }
+        for(char[] row: this.wordPuzzle)
+            printRow(row);
     }
 
     private void printRow(char[] row)
@@ -67,6 +61,16 @@ public class Puzzle
             System.out.print(c);
 
         System.out.println();
+    }
+
+    public int getPuzzleSize()
+    {
+        return this.MAX_SIZE;
+    }
+
+    public char getLetter(int row, int column)
+    {
+        return this.wordPuzzle[row][column];
     }
 
 
