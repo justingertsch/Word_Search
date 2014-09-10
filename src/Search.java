@@ -11,15 +11,28 @@ public class Search
 
     public static void main(String[] args)
     {
+        if (args.length == 0)
+        {
+            System.out.println("Error: No file specified. Usage: Search.class file");
+            System.exit(0);
+        }
+
         Scanner in = new Scanner(Paths.get(args[0]));
         Search searcher = new Search();
         searcher.setPuzzle(new Puzzle(in));
-        searcher.searchWords(in);
+        searcher.printPuzzle();
+        //searcher.searchWords(in);
+
     }
 
     public void setPuzzle(Puzzle p)
     {
-        wordPuzzle = p;
+        this.wordPuzzle = p;
+    }
+
+    public void printPuzzle()
+    {
+        this.wordPuzzle.printPuzzle();
     }
 
     public void searchWords(Scanner s)
