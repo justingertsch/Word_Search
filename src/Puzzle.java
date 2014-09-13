@@ -53,6 +53,7 @@ public class Puzzle
     {
         for(char[] row: this.wordPuzzle)
             printRow(row);
+        System.out.println();
     }
 
     private void printRow(char[] row)
